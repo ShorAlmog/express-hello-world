@@ -1,0 +1,12 @@
+# render.yaml
+services:
+  - type: web
+    name: codecademy-simple-api
+    runtime: node           # modern field; replaces old 'env'
+    plan: free
+    # region: frankfurt      # optional; default is oregon if omitted
+    buildCommand: npm ci
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 22.16.0       # keep Render’s current default aligned
